@@ -1,6 +1,6 @@
 {
   "name": "code-monorepo",
-  "private": true,
+  "private": false,
   "description": "Tools for repo-wide maintenance.",
   "scripts": {
     "format": "prettier --check *.json *.md .github/workflows/*.yml **/*.js",
