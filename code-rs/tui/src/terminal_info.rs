@@ -51,6 +51,10 @@ fn set_nonblocking(tty: &std::fs::File) {
             }
         }
     }
+    #[cfg(not(unix))]
+    {
+        let _ = tty;
+    }
 }
 
 fn read_reply(tty: &mut std::fs::File, timeout: Duration) -> Option<String> {

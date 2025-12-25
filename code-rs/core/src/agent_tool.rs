@@ -1111,7 +1111,6 @@ fn command_exists(cmd: &str) -> bool {
 
             #[cfg(target_os = "windows")]
             {
-                const DEFAULT_EXTS: &[&str] = &[".exe", ".com", ".cmd", ".bat"];
                 for ext in default_pathext_or_default() {
                     let candidate = path.with_extension("");
                     let candidate = candidate.with_extension(ext.trim_start_matches('.'));
