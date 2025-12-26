@@ -5,6 +5,7 @@
 **Every Code** (Code for short) is a fast, local coding agent for your terminal. It's a community-driven fork of `openai/codex` focused on real developer ergonomics: Browser integration, multi-agents, theming, and reasoning control — all while staying compatible with upstream.
 
 &ensp;
+
 ## What's new in v0.6.0 (December 2025)
 
 - **Auto Review** – background ghost-commit watcher runs reviews in a separate worktree whenever a turn changes code; uses `codex-5.1-mini-high` and reports issues plus ready-to-apply fixes without blocking the main thread.
@@ -16,6 +17,7 @@
  [Read the full notes in RELEASE_NOTES.md](docs/release-notes/RELEASE_NOTES.md)
 
 &ensp;
+
 ## Why Every Code
 
 - 🚀 **Auto Drive orchestration** – Multi-agent automation that now self-heals and ships complete tasks.
@@ -27,6 +29,7 @@
 - 🔒 **Safety modes** – Read-only, approvals, and workspace sandboxing.
 
 &ensp;
+
 ## AI Videos
 
 &ensp;
@@ -53,9 +56,8 @@
   <strong>Multi-Agent Promo</strong>
 </p>
 
-
-
 &ensp;
+
 ## Quickstart
 
 ### Run
@@ -74,6 +76,7 @@ code // or `coder` if you're using VS Code
 Note: If another tool already provides a `code` command (e.g. VS Code), our CLI is also installed as `coder`. Use `coder` to avoid conflicts.
 
 **Authenticate** (one of the following):
+
 - **Sign in with ChatGPT** (Plus/Pro/Team; uses models available to your plan)
   - Run `code` and pick "Sign in with ChatGPT"
 - **API key** (usage-based)
@@ -105,9 +108,11 @@ qwen --version
 > ℹ️ Add `export N_PREFIX="$HOME/.n"` and `export PATH="$N_PREFIX/bin:$PATH"` (plus the `npm_config_prefix` bin path) to your shell profile so the CLIs stay on `PATH` in future sessions.
 
 &ensp;
+
 ## Commands
 
 ### Browser
+
 ```bash
 # Connect code to external Chrome browser (running CDP)
 /chrome        # Connect with auto-detect port
@@ -119,6 +124,7 @@ qwen --version
 ```
 
 ### Agents
+
 ```bash
 # Plan code changes (Claude, Gemini and GPT-5 consensus)
 # All agents review task and create a consolidated plan
@@ -134,6 +140,7 @@ qwen --version
 ```
 
 ### Auto Drive
+
 ```bash
 # Hand off a multi-step task; Auto Drive will coordinate agents and approvals
 /auto "Refactor the auth flow and add device login"
@@ -143,6 +150,7 @@ qwen --version
 ```
 
 ### General
+
 ```bash
 # Try a new theme!
 /themes
@@ -175,11 +183,13 @@ Options:
 ```
 
 &ensp;
+
 ## Memory & project docs
 
 Every Code can remember context across sessions:
 
 1. **Create an `AGENTS.md` or `CLAUDE.md` file** in your project root:
+
 ```markdown
 # Project Context
 This is a React TypeScript application with:
@@ -193,10 +203,11 @@ This is a React TypeScript application with:
 - `/server/` - Backend services
 ```
 
-2. **Session memory**: Every Code maintains conversation history
-3. **Codebase analysis**: Automatically understands project structure
+1. **Session memory**: Every Code maintains conversation history
+2. **Codebase analysis**: Automatically understands project structure
 
 &ensp;
+
 ## Non-interactive / CI mode
 
 For automation and CI/CD:
@@ -213,6 +224,7 @@ code --config output_format=json "list all TODO comments"
 ```
 
 &ensp;
+
 ## Model Context Protocol (MCP)
 
 Every Code supports MCP for extended capabilities:
@@ -231,6 +243,7 @@ args = ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
 ```
 
 &ensp;
+
 ## Configuration
 
 Main config file: `~/.code/config.toml`
@@ -269,6 +282,7 @@ model_reasoning_summary = "detailed"
 - `OPENAI_WIRE_API`: Force the built-in OpenAI provider to use `chat` or `responses` wiring
 
 &ensp;
+
 ## FAQ
 
 **How is this different from the original?**
@@ -284,6 +298,7 @@ model_reasoning_summary = "detailed"
 > Yes. Authentication stays on your machine, and we don't proxy your credentials or conversations.
 
 &ensp;
+
 ## Contributing
 
 We welcome contributions! Every Code maintains compatibility with upstream while adding community-requested features.
@@ -322,29 +337,35 @@ The `pre-push` hook runs `./pre-release.sh` automatically when pushing to `main`
 5. Build successfully: `./build-fast.sh`
 6. Submit a pull request
 
-
 &ensp;
+
 ## Legal & Use
 
 ### License & attribution
+
 - This project is a community fork of `openai/codex` under **Apache-2.0**. We preserve upstream LICENSE and NOTICE files.
 - **Every Code** (Code) is **not** affiliated with, sponsored by, or endorsed by OpenAI.
 
 ### Your responsibilities
+
 Using OpenAI, Anthropic or Google services through Every Code means you agree to **their Terms and policies**. In particular:
+
 - **Don't** programmatically scrape/extract content outside intended flows.
 - **Don't** bypass or interfere with rate limits, quotas, or safety mitigations.
 - Use your **own** account; don't share or rotate accounts to evade limits.
 - If you configure other model providers, you're responsible for their terms.
 
 ### Privacy
+
 - Your auth file lives at `~/.code/auth.json`
 - Inputs/outputs you send to AI providers are handled under their Terms and Privacy Policy; consult those documents (and any org-level data-sharing settings).
 
 ### Subject to change
+
 AI providers can change eligibility, limits, models, or authentication flows. Every Code supports **both** ChatGPT sign-in and API-key modes so you can pick what fits (local/hobby vs CI/automation).
 
 &ensp;
+
 ## License
 
 Apache 2.0 - See [LICENSE](LICENSE) file for details.
@@ -353,4 +374,5 @@ Every Code is a community fork of the original Codex CLI. We maintain compatibil
 
 &ensp;
 ---
+
 **Need help?** Open an issue on [GitHub](https://github.com/just-every/code/issues) or check our documentation.
